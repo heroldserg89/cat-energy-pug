@@ -11,11 +11,12 @@ header.page__header.main-header
         each item in dataNavSite
           li.nav-site__item
             a.nav-site__link(class=(item.href === pageUrl ? 'nav-site__link--current': ''), href=item.href, aria-current=(item.href === pageUrl ? 'page' : false)) #{item.title}
-  section.main-header__hero.hero
-    .hero__wrapper.container
-      .hero__content
-        h1.hero__title Функциональное<br> питание для котов
-        p.hero__desc Занялся собой? Займись котом!
-      +imgResponse('hero/hero-img.png', dataHeroImg).hero__img(width=280, height=270, alt='Продукт')
-      a.hero__button.button.button--size-xl-md(href='plans.html') Подобрать программу
+  if pageUrl === 'index.html'
+    section.main-header__hero.hero
+      .hero__wrapper.container
+        .hero__content
+          h1.hero__title Функциональное<br> питание для котов
+          p.hero__desc Занялся собой? Займись котом!
+        +imgResponse('hero/hero-img.png', dataHeroImg).hero__img(width=280, height=270, alt='Продукт')
+        a.hero__button.button.button--size-xl-md(href='plans.html') Подобрать программу
 
