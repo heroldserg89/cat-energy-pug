@@ -27,9 +27,6 @@ const sassBuild = () => (
     .pipe(gulpif(config.isProd, gcmq()))
     .pipe(gulpif(config.isProd, autoprefixer()))
     .pipe(gulpif(config.isProd, cleanCSS({ level: 2 })))
-    .pipe(rename({
-      suffix: '.min',
-    }))
     .pipe(gulp.dest(config.dest.css, { sourcemaps: '.' }))
 );
 

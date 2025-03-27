@@ -1,3 +1,20 @@
-footer.footer
-  .container
-    p FOOTER
+footer.page__footer.main-footer
+  .main-footer__contacts.contacts
+    .contacts__wrapper.container
+      h2.contacts__title Приглашаем к сотрудничеству дилеров!
+      address.contacts__address ул. Большая Конюшенная, д. 19/8 Санкт-Петербург
+    .contacts__maps
+  .main-footer__wrapper.container
+    a.main-footer__logo.logo(href='index.html', aria-current=(pageUrl==='index.html'?'page':false))
+      img.logo__img(src='./images/logo-text.svg', width=128, height=24, alt='Текстовый логотип')
+    ul.main-footer__social.social-list
+      li.social-list__item
+        a.social-list__link.social-list__link--vk(href='https://vk.com/htmlacademy', target='_blank', rel='noreferrer noopener')
+          span.visually-hidden Наша группа Вконтакте
+        a.social-list__link.social-list__link--youtube(href='https://www.youtube.com/user/htmlacademyru', target='_blank', rel='noreferrer noopener')
+          span.visually-hidden Наш канал на Youtube
+        a.social-list__link.social-list__link--telegram(href='https://t.me/htmlacademy', target='_blank', rel='noreferrer noopener')
+          span.visually-hidden Наша группа Telegram
+    a.footer__developer(href='', target='_blank' rel='noreferrer noopener')
+      span.footer__developer-text HTML Academy
+

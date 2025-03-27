@@ -16,7 +16,7 @@ export const scripts = (done) => {
     .pipe(webpackStream({
       mode: config.isProd ? 'production' : 'development',
       output: {
-        filename: 'main.js',
+        filename: 'index.js',
       },
       module: {
         rules: [{
@@ -40,9 +40,6 @@ export const scripts = (done) => {
       console.error('WEBPACK ERROR', err);
       this.emit('end');
     })
-    .pipe(rename({
-      suffix: '.min',
-    }))
     .pipe(gulp.dest(config.dest.js));
   done();
 };

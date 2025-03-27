@@ -17,10 +17,10 @@ const config = {
   dest: {
     root: destPath,
     html: destPath,
-    css: `${destPath}/css`,
-    js: `${destPath}/js`,
+    css: `${destPath}/style`,
+    js: `${destPath}/scripts`,
     fonts: `${destPath}/fonts`,
-    images: `${destPath}/img`,
+    images: `${destPath}/images`,
     favicons: destPath,
   },
 
