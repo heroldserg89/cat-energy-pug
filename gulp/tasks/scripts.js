@@ -1,7 +1,6 @@
 import gulp from 'gulp';
 import plumber from 'gulp-plumber';
 import notify from 'gulp-notify';
-import rename from 'gulp-rename';
 import webpackStream from 'webpack-stream';
 import config from '../config.js';
 

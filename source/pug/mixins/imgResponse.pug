@@ -10,7 +10,7 @@ mixin imgResponse(src, response )
       picture
         if response
           each item in response
-            source(media=`(width>=${item.minWidth}px)`, srcset=`${path}${item.src?item.src:src}`, width=item.width, height=item.height, type="image/svg+xml")
+            source(media=`(min-width:${item.minWidth}px)`, srcset=`${path}${item.src?item.src:src}`, width=item.width, height=item.height, type="image/svg+xml")
         img(src=`${path}${src}`, width='', height='', alt='')&attributes(attributes)
     else
       picture

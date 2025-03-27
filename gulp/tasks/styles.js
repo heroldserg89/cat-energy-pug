@@ -5,7 +5,6 @@ import plumber from 'gulp-plumber';
 import autoprefixer from 'gulp-autoprefixer';
 import gcmq from 'gulp-group-css-media-queries';
 import cleanCSS from 'gulp-clean-css';
-import rename from 'gulp-rename';
 import gulpif from 'gulp-if';
 import notify from 'gulp-notify';
 import config from '../config.js';
