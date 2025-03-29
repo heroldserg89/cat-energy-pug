@@ -11,20 +11,46 @@ block content
         h1.catalog__title Каталог продукции
         ul.catalog__list
           each item in dataCatalog
-            li.catalog__item.product
-              a.product__link(href='#')
-                +imgResponse(item.imgUrl, item.response).product__img(width=item.imgWidth, height=item.imgHeight, alt=item.title)
-                h2.product__title #{item.title}
-              dl.product__details-list
-                .product__details-block
-                  dt.product__details-title Масса
-                  dd.product__details-desc #{item.weight} г
-                .product__details-block
-                  dt.product__details-title Вкус
-                  dd.product__details-desc #{item.taste}
-                .product__details-block
-                  dt.product__details-title Цена
-                  dd.product__details-desc #{item.price} ₽
-              a.product__button.button(href='#') Заказать
-
-
+            li.catalog__item.card
+              a.card__link(href='#')
+                +imgResponse(item.imgUrl, item.response).card__img(width=item.imgWidth, height=item.imgHeight, alt=item.title)
+                h2.card__title #{item.title}
+              dl.card__details-list
+                .card__details-block
+                  dt.card__details-title Масса
+                  dd.card__details-desc #{item.weight} г
+                .card__details-block
+                  dt.card__details-title Вкус
+                  dd.card__details-desc #{item.taste}
+                .card__details-block
+                  dt.card__details-title Цена
+                  dd.card__details-desc #{item.price} ₽
+              a.card__button.button(href='#') Заказать
+          li.card.card--more
+            h2.card__title Показать еще 100500 товаров
+            p.card__details На самом деле вкусов гораздо больше!
+            a.card__button.button.button-secondary(href='#') Показать все
+    section.extra-goods
+      .extra-goods__wrapper.container
+        h2.extra-goods__title.title-block Дополнительные товары
+        ul.extra-goods__list
+          each item in dataCatalogExtra
+            li.extra-goods__item
+              a.extra-goods__link(href='#')
+                h3.extra-goods__item-title #{item.title}
+              dl.extra-goods__details
+                dt.extra-goods__details-title #{item.detailsTitle}
+                dd.extra-goods__details-desc #{item.detailsDesc}
+              a.extra-goods__button.button Заказать
+        a.extra-goods__promo.promo(href="#")
+          p.promo__text
+           | Закажите все и получите чехол для кота в подарок!
+    section.subscription
+      .subscription__wrapper.container
+        h2.subscription__title.title-block Акции и новинки
+        p.subscription__text Подпишитесь на наши новости и не пропустите ни одного предложения!
+        form.subscription__form.form-subscription(action='https://echo.htmlacademy.ru/', method='post')
+          label.form-subscription__field.field
+            span.field__text.visually-hidden Введите свой email
+            input.field__input(type='email', name='email', placeholder='кuklachev@gmail.com', required)
+          button.form-subscription__button.button(type="submit") Подписаться
