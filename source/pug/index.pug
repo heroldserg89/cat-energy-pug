@@ -14,12 +14,12 @@ block content
             h3.programs__title Похудение
             p.programs__desc
               | Ваш кот весит больше собаки и почти утратил способность лазить по деревьям? Пора на диету! Cat Energy Slim поможет вашему питомцу сбросить лишний вес.
-            a.programs__link(href="#") Каталог Slim
+            a.programs__link(href='#') Каталог Slim
           li.programs__item
             h3.programs__title Набор массы
             p.programs__desc
               | Заработать авторитет среди дворовых котов и даже собак? Серия Cat Energy Pro поможет вашему коту нарастить необходимые мышцы!
-            a.programs__link(href="#") Каталог Pro
+            a.programs__link(href='#') Каталог Pro
     section.stages
       .stages__wrapper.container
         h2.stages__title Как это работает
@@ -48,5 +48,6 @@ block content
             dt.example__desc-title Затраты на питание:
             dd.example__desc-text 15&nbsp;000 рублей
         .example__slider.slider
-
+          +imgResponse('slider/cat-before.png', dataSliderImg).slider__img.slider__img--before(width=280, height=256, alt='Фото кота до приема')
+          +imgResponse('slider/cat-after.png', dataSliderImg).slider__img.slider__img--after(width=280, height=256, alt='Фото кота после приема')
 

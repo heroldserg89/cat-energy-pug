@@ -9,7 +9,10 @@ export const pugBuild = () => gulp
   .src(`${config.src.pug}/*.pug`)
   .pipe(plumber())
   .pipe(pug())
-  .pipe(formatHTML())
+  .pipe(formatHTML({
+    end_with_newline: true,
+    unformatted: ['br'],
+  }))
   .pipe(cached('pug'))
   .pipe(gulp.dest('build'));
 

@@ -4,20 +4,20 @@ mixin imgResponse(src, response )
   - const path = './images/'
   - let type = extname
 
-    if extname === 'jpg'
-      - type = 'jpeg'
-    if extname === 'svg'
-      picture
-        if response
-          each item in response
-            source(media=`(min-width:${item.minWidth}px)`, srcset=`${path}${item.src?item.src:src}`, width=item.width, height=item.height, type="image/svg+xml")
-        img(src=`${path}${src}`, width='', height='', alt='')&attributes(attributes)
-    else
-      picture
-        if response
-          each item in response
-            source(media=`(min-width:${item}px)`, srcset=`${path + srcFirstPart}-${item}@1x.webp, ${path + srcFirstPart}-${item}@2x.webp 2x`, type='image/webp')
-            source(media=`(min-width:${item}px)`, srcset=`${path + srcFirstPart}-${item}@1x.${extname}, ${path + srcFirstPart}-${item}@2x.${extname} 2x`, type=`image/${type}`)
-        source(srcset=`${path + srcFirstPart}@1x.webp, ${path + srcFirstPart}@2x.webp`, type='image/webp')
-        img(src=`${path + srcFirstPart}@1x.${extname}`, srcset=`${path + srcFirstPart}@2x.${extname} 2x`, loading='lazy', width='', height='', alt='')&attributes(
-          attributes)
+  if extname === 'jpg'
+    - type = 'jpeg'
+  if extname === 'svg'
+    picture
+      if response
+        each item in response
+          source(media=`(min-width:${item.minWidth}px)`, srcset=`${path + (item.src ? item.src : src)}`, width=item.width, height=item.height, type='image/svg+xml')
+      img(src=`${path + src}`, width='', height='', alt='')&attributes(attributes)
+  else
+    picture
+      if response
+        each item in response
+          source(media=`(min-width:${item.minWidth}px)`, srcset=`${path + srcFirstPart}-${item.prefix}@1x.webp 1x, ${path + srcFirstPart}-${item.prefix}@2x.webp 2x`, width=item.width, height=item.height, type='image/webp')
+          source(media=`(min-width:${item.minWidth}px)`, srcset=`${path + srcFirstPart}-${item.prefix}@1x.${extname} 1x, ${path + srcFirstPart}-${item.prefix}@2x.${extname} 2x`, width=item.width, height=item.height, type=`image/${type}`)
+      source(srcset=`${path + srcFirstPart}@1x.webp 1x, ${path + srcFirstPart}@2x.webp 2x`, type='image/webp')
+      img(src=`${path + srcFirstPart}@1x.${extname}`, srcset=`${path + srcFirstPart}@2x.${extname} 2x`, width='', height='', alt='', loading='lazy')&attributes(
+        attributes)

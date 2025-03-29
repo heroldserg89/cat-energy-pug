@@ -6,5 +6,25 @@ block variables
 
 block content
   main.page__content
+    section.catalog
+      .catalog__wrapper.container
+        h1.catalog__title Каталог продукции
+        ul.catalog__list
+          each item in dataCatalog
+            li.catalog__item.product
+              a.product__link(href='#')
+                +imgResponse(item.imgUrl, item.response).product__img(width=item.imgWidth, height=item.imgHeight, alt=item.title)
+                h2.product__title #{item.title}
+              dl.product__details-list
+                .product__details-block
+                  dt.product__details-title Масса
+                  dd.product__details-desc #{item.weight} г
+                .product__details-block
+                  dt.product__details-title Вкус
+                  dd.product__details-desc #{item.taste}
+                .product__details-block
+                  dt.product__details-title Цена
+                  dd.product__details-desc #{item.price} ₽
+              a.product__button.button(href='#') Заказать
 
 
