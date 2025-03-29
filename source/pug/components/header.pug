@@ -1,9 +1,7 @@
 header.page__header.main-header
   .main-header__nav.container
     a.main-header__logo.logo(href='/', aria-current='page')
-
       +imgResponse('logo-mobile.svg', logoData).logo__img(width=33 height=38, alt='Логотип')
-
       +imgResponse('logo-text.svg', logoDataText).logo__img.logo__img--text(width=101 height=18, alt='Логотип')
     button.main-header__burger.burger(type='button')
       span.visually-hidden Открыть меню
