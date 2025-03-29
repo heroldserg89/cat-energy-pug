@@ -15,16 +15,16 @@ block content
               a.product__link(href='#')
                 +imgResponse(item.imgUrl, item.response).product__img(width=item.imgWidth, height=item.imgHeight, alt=item.title)
                 h2.product__title #{item.title}
-              dl.product__characteristics-list
-                .product__characteristics-block
-                  dt.product__characteristics-title Масса
-                  dd.product__characteristics-desc #{item.weight} г
-                .product__characteristics-block
-                  dt.product__characteristics-title Вкус
-                  dd.product__characteristics-desc #{item.taste}
-                .product__characteristics-block
-                  dt.product__characteristics-title Цена
-                  dd.product__characteristics-desc #{item.price} ₽
+              dl.product__details-list
+                .product__details-block
+                  dt.product__details-title Масса
+                  dd.product__details-desc #{item.weight} г
+                .product__details-block
+                  dt.product__details-title Вкус
+                  dd.product__details-desc #{item.taste}
+                .product__details-block
+                  dt.product__details-title Цена
+                  dd.product__details-desc #{item.price} ₽
               a.product__button.button(href='#') Заказать
 
 
