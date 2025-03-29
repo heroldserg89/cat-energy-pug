@@ -27,5 +27,6 @@
   "disallowTrailingSpaces": true,
   "disallowSpacesInsideAttributeBrackets": true,
   "disallowLegacyMixinCall": true,
-  "disallowDuplicateAttributes": true
+  "disallowDuplicateAttributes": true,
+  "validateSelfClosingTags": false
 }
